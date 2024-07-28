@@ -64,7 +64,7 @@ export const HomeScreen = () => {
           </Pressable>
         </View>
         <ProductsButton
-          onPress={() => navigation.navigate('Productos')}
+          onPress={() => navigation.navigate('Cajas de Ahorro')}
           label="CAJAS DE AHORRO"
           icon={'bag-outline'}
           color={globalColors.principalColor}
@@ -72,27 +72,23 @@ export const HomeScreen = () => {
           subText2={show ? 'u$s 369' : '***'}
           subText3={show ? 'Cantidad: 3' : '***'}
         />
+        <ProductsButton
+          onPress={() => navigation.navigate('Tus Tarjetas')}
+          label="TUS TARJETAS"
+          icon={'card'}
+          color={globalColors.principalColor}
+          subText1={show ? 'Crédito: 5' : '***'}
+          subText2={show ? 'Débito: 4' : '***'}
+          subText3={show ? 'Cantidad: 9' : '***'}
+        />
         <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop:10 }}>
           <BoxButtons label='Ingresar' icon='download-outline' />
           <BoxButtons label='Transferir' icon='share-outline' />
           <BoxButtons label='Prestamos' icon='cash-outline' />
           <BoxButtons label='Tu CVU' icon='id-card-outline' />
         </View>
-        <Text style={[{ marginTop: 20 }, globalStyles.primaryText]}>Tarjetas</Text>
-        <ProductsButton
-          onPress={() => navigation.navigate('Productos')}
-          label="TARJETAS DE CRÉDITO"
-          icon={'card'}
-          color={globalColors.principalColor}
-          subText3="Cantidad: 6"
-        />
-        <ProductsButton
-          onPress={() => navigation.navigate('Productos')}
-          label="TARJETAS DE DÉBITO"
-          icon={'card-outline'}
-          color={globalColors.principalColor}
-          subText3="Cantidad: 9"
-        />
+        {/* <Text style={[{ marginTop: 20 }, globalStyles.primaryText]}>Tarjetas</Text> */}
+       
         {/* <PrimaryButton onPress={() => navigation.navigate('Settings')} label="Settings" /> */}
         {/* <Pressable style={{position:'absolute', bottom:20, right:20}} onPress={()=> navigation.navigate('MODO')}> */}
         <Pressable

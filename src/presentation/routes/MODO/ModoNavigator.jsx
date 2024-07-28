@@ -1,18 +1,18 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import { globalColors } from '../theme/theme';
-import { useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { ModoScreen } from '../screens/MODO/ModoScreen';
+import { globalColors } from '../../theme/theme';
+import { ModoScreen } from '../../screens/MODO/ModoScreen';
+import { AccountsTabsModoNavigator } from './AccountsTabModoNavigator';
+import { CardsTabsModoNavigator } from './CardsTabModoNavigator';
 // Creamos un stack, que es una pila de pantallas
 const Stack = createStackNavigator();
 // Es como el Router de React, y los Stack.Screen son como las rutas
 export const ModoNavigator = () => {
-  const navigation = useNavigation();
-  useEffect(() => {
-    navigation.setOptions({
-      headerShown: false
-    })
-  }, [])
+  // const navigation = useNavigation();
+  // useEffect(() => {
+  //   navigation.setOptions({
+  //     headerShown: false
+  //   })
+  // }, [])
 
   return (
     // Stack.Navigator es el contenedor de las pantallas
@@ -36,12 +36,9 @@ export const ModoNavigator = () => {
         },
       }}
     >
-      {/* Stack.Screen es una pantalla del stack */}
-      {/* Puedo personalizar individualmente cada header con options ={{}}, osea lo que hice en Stack.Navigator pero individual para cada pantalla */}
-      {/* Por ej puedo cambiar el color del header de la pantalla Home */}
-      {/* Esto es un stack completo, MODO es la pantalla principal */}
-      {/* Solo me puedo mover desde las pantallas que esten aca entre las pantallas que estan aca */}
       <Stack.Screen name="Modo" component={ModoScreen} />
+      <Stack.Screen name="Cuentas Favoritas Modo" component={AccountsTabsModoNavigator} />
+      <Stack.Screen name="Tarjetas Favoritas Modo" component={CardsTabsModoNavigator} />
     </Stack.Navigator>
   );
 };

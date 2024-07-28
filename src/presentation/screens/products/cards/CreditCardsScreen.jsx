@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 export const CreditCardsScreen = () => {
     return (
-        <View style={globalStyles.container}>
+        <View style={[globalStyles.container,{paddingBottom:0}]}>
             <ScrollView>
                 <Image
                     resizeMode='contain'

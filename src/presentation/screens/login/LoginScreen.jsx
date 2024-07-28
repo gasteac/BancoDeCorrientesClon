@@ -4,7 +4,7 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { Ionicons } from '../../components/shared/Ionicons';
 import { useState } from 'react';
 import { PrimaryButton } from '../../components/shared/PrimaryButton';
-import { useNavigation } from '@react-navigation/native';
+import { CommonActions, useNavigation } from '@react-navigation/native';
 import Carousel from 'react-native-reanimated-carousel';
 import { TextInput } from 'react-native-paper';
 
@@ -63,7 +63,7 @@ export const LoginScreen = () => {
                 />
             </View>
             <View style={{ flex: 1, width: '100%', alignContent: 'center', alignItems: 'center', alignContent: 'center', marginTop: 20, marginBottom: 10 }}>
-                <PrimaryButton onPress={() => navigation.navigate('Pagina Principal')} label='Iniciar Sesión' />
+                <PrimaryButton onPress={() => navigation.replace('SideMenu')} label='Iniciar Sesión' />
                 <Pressable style={{ justifyContent: 'center', width: '100%', gap: 5, alignItems: 'center', alignContent: 'center', marginVertical: 30 }} onPress={() => setModalVisible(true)}>
                     <Ionicons name='finger-print' size={45} color={globalColors.principalColor} />
                     <Text style={{ color: globalColors.principalColor, fontSize: 15, fontFamily: 'Poppins-Medium' }}>Usar Huella</Text>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 16,
         fontFamily: 'Poppins-Medium',
-        paddingTop:5
+        paddingTop: 5
 
     },
     modalText: {

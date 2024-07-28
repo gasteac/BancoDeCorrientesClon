@@ -4,22 +4,21 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 import { globalColors, globalStyles } from '../theme/theme';
-import { Button, Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
-import { StackNavigator } from './StackNavigator';
-import { BottomTabsNavigator } from './BottomTabsNavigator';
+import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
+
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '../components/shared/Ionicons';
-import { ModoNavigator } from './ModoNavigator';
+import { ModoNavigator } from './MODO/ModoNavigator';
 import { LoginScreen } from '../screens/login/LoginScreen';
-import { TopTabsNavigator } from './TopTabsNavigator';
 import { ProfileNavigator } from './ProfileNavigator';
+import { ProductsStack } from './PRODUCTS/ProductsStack';
 
 // DrawerNavigator es un contenedor de pantallas que se muestra como un menú lateral
 // El Drawer puede contener a otros Stacks, como StackNavigator, o pantallas individuales
 
 const Drawer = createDrawerNavigator();
-
 export const SideMenuNavigator = () => {
+  const navigation = useNavigation();
   const dimensions = useWindowDimensions();
   return (
     // Drawer.Navigator es el contenedor de las pantallas, y drawerContent es el contenido del menú lateral
@@ -31,7 +30,6 @@ export const SideMenuNavigator = () => {
       drawerContent={props => <CustomDrawerContent {...props} />}
       // screenOptions es para personalizar el drawer
       screenOptions={{
-        // lazy:"false",
         //Que tan grande es la seccion desde donde puedo mover con el dedo el drawer para verlo
         swipeEdgeWidth: 80,
         //que no me muestre el header (titulo con el icono hamburguesa)
@@ -60,16 +58,14 @@ export const SideMenuNavigator = () => {
           borderRadius: 10,
         },
       }}>
-      {/* Aca van las pantallas del drawer */}
-      {/* Drawer.Screen es una pantalla del drawer */}
-      {/* name es el nombre de la pantalla, y component es el componente que se va a mostrar */}
-      {/* En este caso, el componente es StackNavigator, que es un contenedor de pantallas (stack) */}
+
+        
       <Drawer.Screen
         name="Mis Productos"
         options={{
           drawerIcon: ({ color }) => <Ionicons name="home" color={color} />,
         }}
-        component={StackNavigator}
+        component={ProductsStack}
       />
       <Drawer.Screen
         name="Perfil"
@@ -101,6 +97,17 @@ export const SideMenuNavigator = () => {
           drawerIcon: ({ color }) => <Ionicons name="close-circle" color={color} />,
         }}
         component={LoginScreen}
+        // TODO AYUDAAAA NO SE OLVIDA DE LA PANTALLA ANTERIOR. NO SE COMO HACER QUE SE OLVIDE AAAAAAH
+        onPress={() => {
+            navigation.dispatch(
+              CommonActions.reset({
+                index: 0,
+                routes: [{ name: 'LoginScreen' }],
+              })
+            );
+            navigation.reset('LoginScreen');
+        }
+        }
       />
     </Drawer.Navigator>
   );
@@ -192,13 +199,13 @@ const CustomDrawerContent = props => {
         <DrawerItemList {...props} />
         {/* Aca podría agregar otra cosa al final por ejemplo   */}
       </DrawerContentScrollView>
-      <Button
+      {/* <Button
         title="SECRET SCREEN"
         style={{ backgroundColor: 'red' }}
         onPress={() => {
           navigation.navigate('Secret');
         }}
-      />
+      /> */}
     </View>
   );
 };

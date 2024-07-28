@@ -63,7 +63,7 @@ export const globalStyles = StyleSheet.create({
   productsButtonSubText:{
     fontSize:15,
     color:'black',
-    fontFamily: 'Poppins-Medium',
+    fontFamily: 'Poppins-Regular',
     paddingTop: 5,
   },
   buttonText: {
@@ -85,10 +85,11 @@ export const globalStyles = StyleSheet.create({
     alignItems:'center',
     margin:10,
     height:100,
-    width:100,
+    width:'100%',
     borderRadius: 20,
     backgroundColor: globalColors.primary,
     color:'white',
+    
   },
   defaultButtonText:{
     color:'black',
