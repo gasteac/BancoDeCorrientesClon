@@ -145,7 +145,7 @@ const CustomDrawerContent = props => {
             gap:5,
             marginBottom: 5,
           }}>
-          <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
             <Image
               resizeMode="cover"
               source={require('../assets/images/profilePic.jpg')}
@@ -194,11 +194,13 @@ const CustomDrawerContent = props => {
       {/* Parte del drawer de abajo de la foto, scrolleable */}
       {/* DrawerContentScrollView es un componente que recibe props y retorna un componente que se muestra en el drawer y se puede scrollear */}
       <DrawerContentScrollView>
+      
         {/* Por ejemplo aca quiero que se muestre una imagen, y despues los items del drawer  */}
         {/* y aca muestro los items del drawer que ya estaban definidos en el drawer, y ahora vinieron como props, por ejemplo "Home" o "Profile"  */}
         <DrawerItemList {...props} />
         {/* Aca podría agregar otra cosa al final por ejemplo   */}
       </DrawerContentScrollView>
+      
       {/* <Button
         title="SECRET SCREEN"
         style={{ backgroundColor: 'red' }}
