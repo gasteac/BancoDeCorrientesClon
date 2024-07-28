@@ -78,7 +78,6 @@ export const globalStyles = StyleSheet.create({
     fontSize:20,
     color:'black',
     marginBottom:15,
-    paddingTop: 5,
   },
   defaultButton:{
     alignContent:'center',
@@ -96,5 +95,22 @@ export const globalStyles = StyleSheet.create({
     fontSize:15,
     fontFamily: 'Poppins-Medium',
     paddingTop: 5,
+  },
+  boxButton: {
+    backgroundColor: '#123262',
+    shadowColor: 'black',
+    elevation: 7,
+    width: 60,
+    height: 60,
+    borderRadius:10,
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  boxButtonText:{
+    color:'white',
+    fontSize:8,
+    fontFamily: 'Poppins-Medium',
+    marginTop: 5,
   },
 });

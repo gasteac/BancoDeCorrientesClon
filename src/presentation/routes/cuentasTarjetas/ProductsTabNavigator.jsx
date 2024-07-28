@@ -55,6 +55,17 @@ export const ProductsTabsNavigator = () => {
         },
       }}>
       <Tab.Screen
+        name="CuentasTab"
+        options={{
+          headerTitle: 'Tus Cuentas',
+          title: 'Cuentas',
+          tabBarIcon: ({ color }) => (
+            <Ionicons color={color} name="file-tray-full-outline" />
+          ),
+        }}
+        component={AccountsTabsNavigator}
+      />
+      <Tab.Screen
         name="TarjetasTab"
         options={{
           headerTitle: 'Tarjetas',
@@ -64,18 +75,6 @@ export const ProductsTabsNavigator = () => {
           ),
         }}
         component={CardsTabsNavigator}
-      />
-      <Tab.Screen
-
-        name="CuentasTab"
-        options={{
-          headerTitle: 'Cajas de Ahorro',
-          title: 'Cuentas',
-          tabBarIcon: ({ color }) => (
-            <Ionicons color={color} name="file-tray-full-outline" />
-          ),
-        }}
-        component={AccountsTabsNavigator}
       />
     </Tab.Navigator>
   );

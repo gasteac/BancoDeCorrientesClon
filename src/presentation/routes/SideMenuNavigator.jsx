@@ -11,6 +11,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '../components/shared/Ionicons';
 import { ModoNavigator } from './ModoNavigator';
 import { LoginScreen } from '../screens/login/LoginScreen';
+import { TopTabsNavigator } from './TopTabsNavigator';
+import { ProfileNavigator } from './ProfileNavigator';
 
 // DrawerNavigator es un contenedor de pantallas que se muestra como un menú lateral
 // El Drawer puede contener a otros Stacks, como StackNavigator, o pantallas individuales
@@ -38,7 +40,7 @@ export const SideMenuNavigator = () => {
         drawerStyle: {
           backgroundColor: '#f3f3f3',
           alignItems: 'center',
-          width: dimensions.width >= 735 ? '45%' : '80%',
+          width: dimensions.width >= 735 ? '45%' : '70%',
         },
         // drawerType es para que el drawer sea permanente o que se superponga a la pantalla
         // DEPENDE DEL ANCHO DE LA PANTALLA
@@ -51,11 +53,11 @@ export const SideMenuNavigator = () => {
           //   fontSize: 15,
           letterSpacing: 1,
           fontFamily: 'Poppins-Medium',
+          paddingTop: 5
         },
         // drawerInactiveBackgroundColor: globalColors.inactive,
         drawerItemStyle: {
           borderRadius: 10,
-          padding: 5,
         },
       }}>
       {/* Aca van las pantallas del drawer */}
@@ -63,7 +65,7 @@ export const SideMenuNavigator = () => {
       {/* name es el nombre de la pantalla, y component es el componente que se va a mostrar */}
       {/* En este caso, el componente es StackNavigator, que es un contenedor de pantallas (stack) */}
       <Drawer.Screen
-        name="Productos"
+        name="Mis Productos"
         options={{
           drawerIcon: ({ color }) => <Ionicons name="home" color={color} />,
         }}
@@ -74,7 +76,7 @@ export const SideMenuNavigator = () => {
         options={{
           drawerIcon: ({ color }) => <Ionicons name="person" color={color} />,
         }}
-        component={BottomTabsNavigator}
+        component={ProfileNavigator}
       />
       <Drawer.Screen
         name="MODO"
@@ -118,11 +120,13 @@ const CustomDrawerContent = props => {
           style={[
             globalStyles.text,
             {
-              fontSize: 15,
+              fontSize: 12,
               color: 'white',
               alignSelf: 'center',
               marginBottom: 10,
-              marginTop: 5,
+         
+              fontFamily: 'Poppins-Medium',
+              paddingTop: 5
             },
           ]}>
           Última sesión: 28/05/22 17:26
@@ -130,7 +134,8 @@ const CustomDrawerContent = props => {
         <View
           style={{
             flexDirection: 'row',
-            justifyContent: 'space-around',
+            justifyContent: 'center',
+            gap:5,
             marginBottom: 5,
           }}>
           <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
@@ -138,8 +143,8 @@ const CustomDrawerContent = props => {
               resizeMode="cover"
               source={require('../assets/images/profilePic.jpg')}
               style={{
-                width: 100,
-                height: 100,
+                width: 80,
+                height: 80,
                 borderRadius: 100,
                 shadowColor: 'black',
                 borderWidth: 3,
@@ -151,13 +156,15 @@ const CustomDrawerContent = props => {
             style={[
               globalStyles.text,
               {
-                fontSize: 15,
+                fontSize: 14,
                 color: 'white',
                 marginTop: 15,
-                letterSpacing: 2,
+                letterSpacing: 1,
                 flexWrap: 'wrap',
                 textAlign: 'center',
                 maxWidth: '70%',
+                fontFamily: 'Poppins-Medium',
+                paddingTop: 5
               },
             ]}>
             GASTON EDUARDO ACOSTA (Admin)
@@ -167,11 +174,13 @@ const CustomDrawerContent = props => {
             style={{
               position: 'absolute',
               flexDirection: 'row',
-              bottom: 0,
+              bottom: -10,
               right: 0,
             }}>
-            <Text style={{ color: '#17f060' }}>Dispositivo Vinculado</Text>
-            <Ionicons name="phone-portrait-outline" color="#17f060" size={20} />
+            <Text style={{
+              color: '#17f060', fontFamily: 'Poppins-Medium', paddingTop: 5, fontSize:10, marginTop:-5
+            }}>Dispositivo Vinculado</Text>
+            <Ionicons name="phone-portrait-outline" color="#17f060" size={15} />
           </View>
         </View>
       </View>

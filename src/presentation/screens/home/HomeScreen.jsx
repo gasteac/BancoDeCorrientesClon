@@ -5,12 +5,13 @@ import { HamburguerMenu } from '../../components/shared/HamburguerMenu';
 import { ProductsButton } from '../../components/shared/ProductsButton';
 import { Ionicons } from '../../components/shared/Ionicons';
 import { useState } from 'react';
+import { BoxButtons } from '../../components/shared/BoxButtons';
 // import { Camera, useCameraDevices } from 'react-native-vision-camera';
 // import { CameraPermission } from 'react-native-vision-camera';
 
 export const HomeScreen = () => {
   const navigation = useNavigation();
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   // useEffect(() => {
   //   console.log('me muestro / no me muestro :)');
@@ -55,11 +56,11 @@ export const HomeScreen = () => {
     <>
       <HamburguerMenu />
       {/* Aca me puedo mover solo entre las pantallas que definí en StackNavigator */}
-      <View style={globalStyles.container}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Text style={globalStyles.primaryText}>Cuentas</Text>
+      <View style={[globalStyles.container, { alignItems: 'stretch' }]}>
+        <View style={{ flexDirection: 'row', alignContent: 'center', justifyContent: 'space-between' }}>
+          <Text style={[globalStyles.primaryText, { fontSize: 15 }]}>Hola, <Text style={{ color: '#00928b' }}>Gastón Acosta.</Text></Text>
           <Pressable onPress={() => setShow(!show)}>
-            <Ionicons name="eye-outline" size={30} />
+            <Ionicons name={show ? "eye-outline" : "eye-off-outline"} size={30} />
           </Pressable>
         </View>
         <ProductsButton
@@ -69,22 +70,28 @@ export const HomeScreen = () => {
           color={globalColors.principalColor}
           subText1={show ? '$ 1.726.280,50' : '***'}
           subText2={show ? 'u$s 369' : '***'}
-          subText3={show ? 'Cantidad: 33' : '***'}
+          subText3={show ? 'Cantidad: 3' : '***'}
         />
-        <Text style={globalStyles.primaryText}>Tarjetas</Text>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop:10 }}>
+          <BoxButtons label='Ingresar' icon='download-outline' />
+          <BoxButtons label='Transferir' icon='share-outline' />
+          <BoxButtons label='Prestamos' icon='cash-outline' />
+          <BoxButtons label='Tu CVU' icon='id-card-outline' />
+        </View>
+        <Text style={[{ marginTop: 20 }, globalStyles.primaryText]}>Tarjetas</Text>
         <ProductsButton
           onPress={() => navigation.navigate('Productos')}
           label="TARJETAS DE CRÉDITO"
           icon={'card'}
           color={globalColors.principalColor}
-          subText3="Cantidad: 2"
+          subText3="Cantidad: 6"
         />
         <ProductsButton
           onPress={() => navigation.navigate('Productos')}
           label="TARJETAS DE DÉBITO"
           icon={'card-outline'}
           color={globalColors.principalColor}
-          subText3="Cantidad: 4"
+          subText3="Cantidad: 9"
         />
         {/* <PrimaryButton onPress={() => navigation.navigate('Settings')} label="Settings" /> */}
         {/* <Pressable style={{position:'absolute', bottom:20, right:20}} onPress={()=> navigation.navigate('MODO')}> */}

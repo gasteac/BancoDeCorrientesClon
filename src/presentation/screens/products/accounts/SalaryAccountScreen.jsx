@@ -8,6 +8,10 @@ export const SalaryAccountScreen = () => {
             <ScrollView
             >
                 <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaSueldo.png')} />
+                <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaSueldo.png')} />
+                <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaSueldo.png')} />
+                <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaSueldo.png')} />
+                <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaSueldo.png')} />
             </ScrollView>
         </View>
     )

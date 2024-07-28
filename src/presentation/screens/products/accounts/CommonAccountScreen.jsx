@@ -8,6 +8,10 @@ export const CommonAccountScreen = () => {
             <ScrollView
             >
                 <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaComun.png')} />
+                <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaComun.png')} />
+                <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaComun.png')} />
+                <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaComun.png')} />
+                <Image resizeMode='contain' style={styles.cuentas} source={require('../../../assets/images/cuentaComun.png')} />
             </ScrollView>
         </View>
     )

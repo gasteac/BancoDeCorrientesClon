@@ -22,7 +22,7 @@ export const HamburguerMenu = () => {
         </Pressable>
       ),
       headerRight: () => (
-        <TouchableOpacity onPress={() => navigation.navigate('Tarjetas de Credito')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Pagina Principal')}>
           <Image
             source={require('../../assets/images/BCO2.png')}
             style={{
