@@ -38,6 +38,8 @@ export const StackNavigator = () => {
         // headerTitleStyle es para personalizar el texto del header
         headerTitleStyle: {
           fontSize: 20,
+          fontFamily: 'Poppins-SemiBold',
+          paddingTop: 5
         },
       }}
     >

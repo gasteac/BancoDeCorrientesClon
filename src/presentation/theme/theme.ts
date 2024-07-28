@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 export const globalColors = {
-  primary: '#ffd75f',
+  primary: '#fcd04e',
   primaryDarker: '#dab442',
   principalColor: '#123262',
   principalColorDarker: '#0a162b',
@@ -23,19 +23,22 @@ export const globalStyles = StyleSheet.create({
   },
   primaryButton: {
     backgroundColor: globalColors.primary,
-    shadowColor:'black',
-    elevation:3,
-    borderRadius: 10,
-    padding: 8,
+    borderRadius: 5,
+    paddingTop: 9,
+    paddingBottom: 4,
     width: '100%',
     flexDirection:'row',
     justifyContent:'center',
     alignItems:'center',
+    alignContent:'center'
   },
   primaryButtonText:{
     fontSize:18,
-    fontWeight:'400',
-    color:'#123262',
+    color:'#000000',
+    fontFamily: 'Poppins-Medium',
+    paddingTop:5,
+    alignSelf:'flex-end',
+    textAlign:'center',
   },
   productsButton: {
     backgroundColor: 'white',
@@ -54,22 +57,28 @@ export const globalStyles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     color: 'black',
+    fontFamily: 'Poppins-Medium',
+    paddingTop: 5,
   },
   productsButtonSubText:{
     fontSize:15,
     color:'black',
+    fontFamily: 'Poppins-Medium',
+    paddingTop: 5,
   },
   buttonText: {
     color: globalColors.principalColor,
     fontSize: 20,
     fontWeight:'600',
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Medium',
+    paddingTop: 5,
   },
   primaryText:{
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Medium',
     fontSize:20,
     color:'black',
     marginBottom:15,
+    paddingTop: 5,
   },
   defaultButton:{
     alignContent:'center',
@@ -84,6 +93,8 @@ export const globalStyles = StyleSheet.create({
   },
   defaultButtonText:{
     color:'black',
-    fontSize:15
+    fontSize:15,
+    fontFamily: 'Poppins-Medium',
+    paddingTop: 5,
   },
 });

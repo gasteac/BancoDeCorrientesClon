@@ -50,7 +50,7 @@ export const SideMenuNavigator = () => {
         drawerLabelStyle: {
           //   fontSize: 15,
           letterSpacing: 1,
-          fontFamily: 'Roboto-Regular',
+          fontFamily: 'Poppins-Medium',
         },
         // drawerInactiveBackgroundColor: globalColors.inactive,
         drawerItemStyle: {

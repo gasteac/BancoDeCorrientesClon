@@ -12,12 +12,14 @@ export const ProductsTabsNavigator = () => {
   return (
     <Tab.Navigator
       initialRouteName='CuentasTabs'
+      
       sceneContainerStyle={
         {
           // backgroundColor:globalColors.primary
         }
       }
       screenOptions={{
+        headerTitleAlign: 'center',
         // lazy:"false",
         // headerShown:'false',
         // tabBarShowLabel: false,
@@ -29,9 +31,16 @@ export const ProductsTabsNavigator = () => {
           // Elevation es la sombra del header
           elevation: 30,
           height: 60,
+          
+        },
+        headerTitleStyle: {
+          fontSize: 20,
+          fontFamily: 'Poppins-SemiBold',
+          paddingTop: 5
         },
         tabBarLabelStyle: {
           fontSize: 12,
+          fontFamily: 'Poppins-SemiBold',
         },
         tabBarStyle: {
           height: 60,
@@ -48,7 +57,7 @@ export const ProductsTabsNavigator = () => {
       <Tab.Screen
         name="TarjetasTab"
         options={{
-          headerTitle: 'Mis Productos',
+          headerTitle: 'Tarjetas',
           title: 'Tarjetas',
           tabBarIcon: ({ color }) => (
             <Ionicons color={color} name="card-outline" />
@@ -60,7 +69,7 @@ export const ProductsTabsNavigator = () => {
 
         name="CuentasTab"
         options={{
-          headerTitle: 'Mis Productos',
+          headerTitle: 'Cajas de Ahorro',
           title: 'Cuentas',
           tabBarIcon: ({ color }) => (
             <Ionicons color={color} name="file-tray-full-outline" />

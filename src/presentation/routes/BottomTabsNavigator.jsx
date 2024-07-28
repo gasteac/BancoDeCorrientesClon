@@ -18,6 +18,7 @@ export const BottomTabsNavigator = () => {
         }
       }
       screenOptions={{
+        headerTitleAlign: 'center',
         // lazy:"false",
         // headerShown:'false',
         // tabBarShowLabel: false,
@@ -25,6 +26,7 @@ export const BottomTabsNavigator = () => {
         tabBarActiveTintColor: globalColors.primary,
         //Este headerStyle es el mismo que uso en StackNavigator para que los diseños sean iguales.
         headerStyle: {
+          
           shadowColor: globalColors.principalColor,
           // Elevation es la sombra del header
           elevation: 30,
@@ -32,6 +34,7 @@ export const BottomTabsNavigator = () => {
         },
         tabBarLabelStyle: {
           fontSize: 12,
+          fontFamily: 'Poppins-SemiBold',
         },
         tabBarStyle: {
           height: 60,
@@ -43,6 +46,11 @@ export const BottomTabsNavigator = () => {
         },
         tabBarIconStyle: {
           color: 'white',
+        },
+        headerTitleStyle: {
+          fontSize: 20,
+          fontFamily: 'Poppins-SemiBold',
+          paddingTop: 5,
         },
       }}>
       <Tab.Screen

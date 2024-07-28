@@ -8,16 +8,20 @@ const Tab = createMaterialTopTabNavigator();
 export const AccountsTabsNavigator = () => {
     return (
         <>
-        <HamburguerMenu/>
-        <Tab.Navigator
-        screenOptions={{
-            // lazy:"false"
-        }}
-        initialRouteName='Principal'
-        >
-            <Tab.Screen name="Cuentas Corriente" component={CommonAccountScreen} />
-            <Tab.Screen name="Cuentas Sueldo" component={SalaryAccountScreen} />
-        </Tab.Navigator>
+            <HamburguerMenu />
+            <Tab.Navigator
+            
+                screenOptions={{
+                    tabBarLabelStyle: {
+                        fontFamily: 'Poppins-SemiBold',
+                        paddingTop:5
+                    },
+                }}
+                initialRouteName='Principal'
+            >
+                <Tab.Screen name="Cuentas Corriente" component={CommonAccountScreen} />
+                <Tab.Screen name="Cuentas Sueldo" component={SalaryAccountScreen} />
+            </Tab.Navigator>
         </>
     );
 }

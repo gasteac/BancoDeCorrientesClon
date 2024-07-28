@@ -11,7 +11,12 @@ export const TopTabsNavigator = () => {
             <HamburguerMenu />
             <Tab.Navigator
                 screenOptions={{
-                    // lazy:"false"
+                    headerTitleAlign: 'center',
+                    tabBarLabelStyle: {
+                        fontFamily: 'Poppins-SemiBold',
+                        paddingTop: 5
+                    },
+                    headerTitleAlign: 'center',
                 }}
                 initialRouteName='Principal'
             >

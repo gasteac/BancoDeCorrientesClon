@@ -6,7 +6,7 @@ export const PrimaryButton = ({ label, onPress, color = 'white' }) => {
     <Pressable
       onPress={onPress}
       // onPress={()=>onPress()}
-      style={[{ backgroundColor: { color } }, globalStyles.primaryButton]}>
+      style={globalStyles.primaryButton}>
       <Text style={globalStyles.primaryButtonText}>{label}</Text>
     </Pressable>
   )
