@@ -1,6 +1,6 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { CommonAccountScreen } from '../../screens/products/accounts/CommonAccountScreen';
-import { SalaryAccountScreen } from '../../screens/products/accounts/SalaryAccountScreen';
+import { PesosAccountScreen } from '../../screens/products/accounts/PesosAccountScreen';
+import { DollarsAccountScreen } from '../../screens/products/accounts/DollarsAccountScreen';
 
 const Tab = createMaterialTopTabNavigator();
 export const AccountsTabsNavigator = () => {
@@ -12,10 +12,10 @@ export const AccountsTabsNavigator = () => {
                     paddingTop: 5
                 },
             }}
-            initialRouteName='Cuentas Corriente'
+            initialRouteName='EN PESOS'
         >
-            <Tab.Screen name="Cuentas Corriente" component={CommonAccountScreen} />
-            <Tab.Screen name="Cuentas Sueldo" component={SalaryAccountScreen} />
+            <Tab.Screen name="EN PESOS" component={PesosAccountScreen} />
+            <Tab.Screen name="EN DOLARES" component={DollarsAccountScreen} />
         </Tab.Navigator>
     );
 }

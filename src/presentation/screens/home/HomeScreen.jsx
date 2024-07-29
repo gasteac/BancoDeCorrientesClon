@@ -42,12 +42,19 @@ export const HomeScreen = () => {
           subText2={show ? 'Débito: 4' : '***'}
           subText3={show ? 'Cantidad: 9' : '***'}
         />
-        <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop:10 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginVertical:10 }}>
           <BoxButtons label='Ingresar' icon='download-outline' />
           <BoxButtons label='Transferir' icon='share-outline' />
           <BoxButtons label='Prestamos' icon='cash-outline' />
           <BoxButtons label='Tu CBU' icon='id-card-outline' />
         </View>
+        <Pressable
+          onPress={() => navigation.navigate('MODO')}
+          // onPress={()=>onPress()}
+          style={{ backgroundColor: '#088c5e', marginTop: 10, height: 100, justifyContent: 'center', alignContent: 'center', alignItems: 'center', borderRadius:20 }}>
+
+            <Text style={[globalStyles.productsButtonText, {color:'white', alignSelf:'center', textAlign:'center', fontFamily:'Poppins-Bold', fontSize:40}]}>MODO</Text>
+        </Pressable>
         {/* <Text style={[{ marginTop: 20 }, globalStyles.primaryText]}>Tarjetas</Text> */}
        
         {/* <PrimaryButton onPress={() => navigation.navigate('Settings')} label="Settings" /> */}

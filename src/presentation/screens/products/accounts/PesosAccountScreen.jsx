@@ -2,7 +2,7 @@ import { Image, StyleSheet, View } from 'react-native'
 import { globalStyles } from '../../../theme/theme'
 import { ScrollView } from 'react-native-gesture-handler'
 
-export const CommonAccountScreen = () => {
+export const PesosAccountScreen = () => {
     return (
         <View style={[globalStyles.container, { paddingBottom: 0 }]}>
             <ScrollView

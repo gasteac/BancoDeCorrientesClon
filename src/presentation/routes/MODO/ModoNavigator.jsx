@@ -1,8 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { globalColors } from '../../theme/theme';
 import { ModoScreen } from '../../screens/MODO/ModoScreen';
-import { AccountsTabsModoNavigator } from './AccountsTabModoNavigator';
 import { CardsTabsModoNavigator } from './CardsTabModoNavigator';
+import { AccountModoScreen } from '../../screens/MODO/accounts/AccountModoScreen';
 // Creamos un stack, que es una pila de pantallas
 const Stack = createStackNavigator();
 // Es como el Router de React, y los Stack.Screen son como las rutas
@@ -37,8 +37,8 @@ export const ModoNavigator = () => {
       }}
     >
       <Stack.Screen name="Modo" component={ModoScreen} />
-      <Stack.Screen name="Cuenta Favorita MODO" component={AccountsTabsModoNavigator} />
-      <Stack.Screen name="Tarjetas Favoritas Modo" component={CardsTabsModoNavigator} />
+      <Stack.Screen name="Cuenta Favorita MODO" component={AccountModoScreen} />
+      <Stack.Screen name="Tarjetas Favoritas MODO" component={CardsTabsModoNavigator} />
     </Stack.Navigator>
   );
 };

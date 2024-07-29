@@ -14,7 +14,7 @@ export const ModoScreen = () => {
                     Elegí tus cuentas o tarjetas favoritas para realizar operaciones con MODO.
                 </Text>
                 <DefaultButton label='Cuentas' icon='file-tray-full-outline' onPress={() => navigation.navigate('Cuenta Favorita MODO')}/>
-                <DefaultButton label='Tarjetas' icon='card-outline' onPress={() => navigation.navigate('Tarjetas Favoritas Modo')} />
+                <DefaultButton label='Tarjetas' icon='card-outline' onPress={() => navigation.navigate('Tarjetas Favoritas MODO')} />
             </View>
         </>
     )
