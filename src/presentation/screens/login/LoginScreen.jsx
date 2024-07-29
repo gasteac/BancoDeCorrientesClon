@@ -7,10 +7,16 @@ import { PrimaryButton } from '../../components/shared/PrimaryButton';
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import Carousel from 'react-native-reanimated-carousel';
 import { TextInput } from 'react-native-paper';
+import { useDispatch } from 'react-redux';
+import { loginSuccess } from '../../../../redux/actions/AuthActions';
+
 
 export const LoginScreen = () => {
+    const dispatch = useDispatch()
     const [rememberUser, setRememberUser] = useState(false)
     const [modalVisible, setModalVisible] = useState(false);
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
     const navigation = useNavigation()
     const width = Dimensions.get('window').width;
     const imagesCarousel = [
@@ -50,8 +56,27 @@ export const LoginScreen = () => {
             </View>
             {/* <Text style={{ color: globalColors.principalColor, fontSize: 14 }}>v1726</Text> */}
             <View style={{ width: '100%', marginTop: 20 }}>
-                <TextInput maxLength={30} underlineColor={globalColors.principalColor} activeUnderlineColor={globalColors.primary} style={{ fontFamily: 'Poppins-Medium', paddingVertical: 20, justifyContent: 'center', fontSize: 14, width: '100%', color: 'black', height: 20, borderTopEndRadius: 10, borderTopStartRadius: 10, marginTop: 30, backgroundColor: 'white', borderColor: 'black' }} placeholder='Usuario' placeholderTextColor='#a0a0a0' />
-                <TextInput maxLength={30} underlineColor={globalColors.principalColor} activeUnderlineColor={globalColors.primary} style={{ fontFamily: 'Poppins-Medium', paddingVertical: 20, justifyContent: 'center', fontSize: 14, width: '100%', color: 'black', height: 20, borderTopEndRadius: 10, borderTopStartRadius: 10, marginTop: 10, backgroundColor: 'white', borderColor: 'black' }} placeholder='Contraseña' placeholderTextColor='#a0a0a0' secureTextEntry />
+        <TextInput
+          maxLength={25}
+          underlineColor={globalColors.principalColor}
+          activeUnderlineColor={globalColors.primary}
+          style={{ fontFamily: 'Poppins-Medium', paddingVertical: 20, justifyContent: 'center', fontSize: 14, width: '100%', color: 'black', height: 20, borderTopEndRadius: 10, borderTopStartRadius: 10, marginTop: 30, backgroundColor: 'white', borderColor: 'black' }}
+          placeholder="Usuario"
+          placeholderTextColor="#a0a0a0"
+          value={username}
+          onChangeText={text => setUsername(text)}
+        />
+        <TextInput
+          maxLength={25}
+          underlineColor={globalColors.principalColor}
+          activeUnderlineColor={globalColors.primary}
+          style={{ fontFamily: 'Poppins-Medium', paddingVertical: 20, justifyContent: 'center', fontSize: 14, width: '100%', color: 'black', height: 20, borderTopEndRadius: 10, borderTopStartRadius: 10, marginTop: 10, backgroundColor: 'white', borderColor: 'black' }}
+          placeholder="Contraseña"
+          placeholderTextColor="#a0a0a0"
+          secureTextEntry
+          value={password}
+          onChangeText={text => setPassword(text)}
+        />
                 <BouncyCheckbox
                     style={{ marginTop: 20, gap: 10, alignSelf: 'flex-start' }}
                     onPress={(isChecked) => { setRememberUser(isChecked) }}
@@ -63,7 +88,10 @@ export const LoginScreen = () => {
                 />
             </View>
             <View style={{ flex: 1, width: '100%', alignContent: 'center', alignItems: 'center', alignContent: 'center', marginTop: 20, marginBottom: 10 }}>
-                <PrimaryButton onPress={() => navigation.replace('SideMenu')} label='Iniciar Sesión' />
+                <PrimaryButton onPress={() => ( 
+                    dispatch(loginSuccess(username)),
+                    navigation.replace('SideMenu')
+                    )} label='Iniciar Sesión' />
                 <Pressable style={{ justifyContent: 'center', width: '100%', gap: 5, alignItems: 'center', alignContent: 'center', marginVertical: 30 }} onPress={() => setModalVisible(true)}>
                     <Ionicons name='finger-print' size={45} color={globalColors.principalColor} />
                     <Text style={{ color: globalColors.principalColor, fontSize: 15, fontFamily: 'Poppins-Medium' }}>Usar Huella</Text>

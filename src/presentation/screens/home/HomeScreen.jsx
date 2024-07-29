@@ -6,12 +6,14 @@ import { ProductsButton } from '../../components/shared/ProductsButton';
 import { Ionicons } from '../../components/shared/Ionicons';
 import { useState } from 'react';
 import { BoxButtons } from '../../components/shared/BoxButtons';
+import { useSelector } from 'react-redux';
 // import { Camera, useCameraDevices } from 'react-native-vision-camera';
 // import { CameraPermission } from 'react-native-vision-camera';
 
 export const HomeScreen = () => {
   const navigation = useNavigation();
   const [show, setShow] = useState(false);
+  const nombre = useSelector(state => state.login.nombre)
 
   // useEffect(() => {
   //   console.log('me muestro / no me muestro :)');
@@ -58,7 +60,7 @@ export const HomeScreen = () => {
       {/* Aca me puedo mover solo entre las pantallas que definí en StackNavigator */}
       <View style={[globalStyles.container, { alignItems: 'stretch' }]}>
         <View style={{ flexDirection: 'row', alignContent: 'center', justifyContent: 'space-between' }}>
-          <Text style={[globalStyles.primaryText, { fontSize: 15 }]}>Hola, <Text style={{ color: '#00928b' }}>Gastón Acosta.</Text></Text>
+          <Text style={[globalStyles.primaryText, { fontSize: 15 }]}>Hola, <Text style={{ color: '#00928b' }}>{nombre}</Text></Text>
           <Pressable onPress={() => setShow(!show)}>
             <Ionicons name={show ? "eye-outline" : "eye-off-outline"} size={30} />
           </Pressable>

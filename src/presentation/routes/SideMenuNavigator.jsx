@@ -12,11 +12,14 @@ import { ModoNavigator } from './MODO/ModoNavigator';
 import { LoginScreen } from '../screens/login/LoginScreen';
 import { ProfileNavigator } from './ProfileNavigator';
 import { ProductsStack } from './PRODUCTS/ProductsStack';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 // DrawerNavigator es un contenedor de pantallas que se muestra como un menú lateral
 // El Drawer puede contener a otros Stacks, como StackNavigator, o pantallas individuales
 
 const Drawer = createDrawerNavigator();
+
 export const SideMenuNavigator = () => {
   const navigation = useNavigation();
   const dimensions = useWindowDimensions();
@@ -115,6 +118,8 @@ export const SideMenuNavigator = () => {
 // CustomDrawerContent es un componente que recibe props y retorna un componente que se muestra en el drawer
 const CustomDrawerContent = props => {
   const navigation = useNavigation();
+  const nombre = useSelector(state => state.login.nombre);
+
   return (
     <View style={{ width: '100%', flex: 1 }}>
       <View
@@ -141,9 +146,14 @@ const CustomDrawerContent = props => {
         <View
           style={{
             flexDirection: 'row',
-            justifyContent: 'center',
-            gap:5,
+            justifyContent: 'flex-start',
+            gap:10,
             marginBottom: 5,
+            alignItems: 'center',
+            alignContent: 'center',
+            paddingHorizontal:10
+
+
           }}>
           <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
             <Image
@@ -165,16 +175,13 @@ const CustomDrawerContent = props => {
               {
                 fontSize: 14,
                 color: 'white',
-                marginTop: 15,
                 letterSpacing: 1,
                 flexWrap: 'wrap',
-                textAlign: 'center',
                 maxWidth: '70%',
                 fontFamily: 'Poppins-Medium',
-                paddingTop: 5
               },
             ]}>
-            GASTON EDUARDO ACOSTA (Admin)
+           {nombre}
           </Text>
           {/* <Image source={require('../assets/icons/seguro.png')} resizeMode='contain' style={{ height: 25, width: 25, position: 'absolute', bottom:0, left:225 }}></Image> */}
           <View

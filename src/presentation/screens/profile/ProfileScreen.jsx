@@ -3,9 +3,11 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { globalColors } from '../../theme/theme';
 import { HamburguerMenu } from '../../components/shared/HamburguerMenu';
 import { Ionicons } from '../../components/shared/Ionicons';
+import { useSelector } from 'react-redux';
 
 export const ProfileScreen = () => {
   const { top } = useSafeAreaInsets();
+  const nombre = useSelector(state => state.login.nombre)
   return (
     <>
       <HamburguerMenu />
@@ -32,7 +34,7 @@ export const ProfileScreen = () => {
           marginTop: 20,
           color: 'black',
           fontFamily: 'Poppins-SemiBold'
-        }}>GASTON E. ACOSTA</Text>
+        }}>{nombre}</Text>
 
       </View>
       <ScrollView style={{
@@ -43,70 +45,70 @@ export const ProfileScreen = () => {
         marginTop: top + 10,
       }}>
         
-        <View style={{ marginBottom: 10 , marginTop:10}}>
+        <View style={{ marginBottom: 2 , marginTop:10}}>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
           }}>CUIL</Text>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             color: 'black',
             fontFamily: 'Poppins-SemiBold'
           }}>21-3699631726-6</Text>
         </View>
 
-        <View style={{ marginBottom: 10 }}>
+        <View style={{ marginBottom: 2 }}>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
           }}>Fecha de nacimiento</Text>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             color: 'black',
             fontFamily: 'Poppins-SemiBold'
           }}>12-Noviembre-1933</Text>
         </View>
 
-        <View style={{ marginBottom: 10 }}>
+        <View style={{ marginBottom: 2 }}>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
           }}>País</Text>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             color: 'black',
             fontFamily: 'Poppins-SemiBold'
           }}>Argentina</Text>
         </View>
 <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-        <View style={{ marginBottom: 10 }}>
+        <View style={{ marginBottom: 2 }}>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
           }}>Provincia</Text>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             color: 'black',
             fontFamily: 'Poppins-SemiBold'
           }}>Buenos Aires</Text>
         </View>
-          <View style={{ marginBottom: 10 }}>
+          <View style={{ marginBottom: 2 }}>
             <Text style={{
-              fontSize: 15,
+              fontSize: 14,
               marginTop: 1,
               color: 'gray',
               fontFamily: 'Poppins-SemiBold'
             }}>Código postal</Text>
             <Text style={{
-              fontSize: 15,
+              fontSize: 14,
               color: 'black',
               fontFamily: 'Poppins-SemiBold',
               alignSelf:'flex-end'
@@ -114,28 +116,28 @@ export const ProfileScreen = () => {
           </View>
       </View>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <View style={{ marginBottom: 10 }}>
+          <View style={{ marginBottom: 2 }}>
             <Text style={{
-              fontSize: 15,
+              fontSize: 14,
               marginTop: 1,
               color: 'gray',
               fontFamily: 'Poppins-SemiBold'
             }}>Calle</Text>
             <Text style={{
-              fontSize: 15,
+              fontSize: 14,
               color: 'black',
               fontFamily: 'Poppins-SemiBold'
             }}>Balboa</Text>
           </View>
-          <View style={{ marginBottom: 10 }}>
+          <View style={{ marginBottom: 2 }}>
             <Text style={{
-              fontSize: 15,
+              fontSize: 14,
               marginTop: 1,
               color: 'gray',
               fontFamily: 'Poppins-SemiBold'
             }}>Numero</Text>
             <Text style={{
-              fontSize: 15,
+              fontSize: 14,
               color: 'black',
               fontFamily: 'Poppins-SemiBold',
               alignSelf: 'flex-end'
@@ -143,29 +145,29 @@ export const ProfileScreen = () => {
           </View>
         </View>
 
-        <View style={{ marginBottom: 10 }}>
+        <View style={{ marginBottom: 2 }}>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
           }}>Teléfono</Text>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             color: 'black',
             fontFamily: 'Poppins-SemiBold'
           }}>+543795132130</Text>
         </View>
 
-        <View style={{ marginBottom: 10 }}>
+        <View style={{ marginBottom: 2 }}>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
           }}>Correo electrónico</Text>
           <Text style={{
-            fontSize: 15,
+            fontSize: 14,
             color: 'black',
             fontFamily: 'Poppins-SemiBold'
           }}>gastonacosta@banko.com.ar</Text>

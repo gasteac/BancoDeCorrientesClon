@@ -6,7 +6,9 @@
 #
 build/
 *.pbxuser
+redux copy
 !default.pbxuser
+needed.js
 *.mode1v3
 !default.mode1v3
 *.mode2v3
