@@ -1,14 +1,26 @@
 import { LOGIN_SUCCESSFUL } from "../actions/types";
 
 const initialState = {
-  nombre: 'Sin Nombre',
+  logged: false,
+  nombre: '',
 };
 
 export const loginReducer = (state = initialState, action) => {
-  switch (action.type) {
+  // Desestructurando el type y el payload de action
+  const { type, payload } = action;
+  // console.log(payload.username, payload.password)
+  switch (type) {
     case LOGIN_SUCCESSFUL:
-      return { ...state, nombre: action.payload}; // Asegúrate de que `payload` es el nuevo nombre
+      return { ...state, nombre: payload.username, logged: true };
     default:
       return state;
   }
 };
+
+// export const logoutReducer = (state = initialState) => {
+//     return {
+//       ...state, 
+//       logged: false,
+//       nombre: null
+//     };
+// };

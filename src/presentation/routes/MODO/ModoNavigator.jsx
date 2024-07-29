@@ -37,7 +37,7 @@ export const ModoNavigator = () => {
       }}
     >
       <Stack.Screen name="Modo" component={ModoScreen} />
-      <Stack.Screen name="Cuentas Favoritas Modo" component={AccountsTabsModoNavigator} />
+      <Stack.Screen name="Cuenta Favorita MODO" component={AccountsTabsModoNavigator} />
       <Stack.Screen name="Tarjetas Favoritas Modo" component={CardsTabsModoNavigator} />
     </Stack.Navigator>
   );

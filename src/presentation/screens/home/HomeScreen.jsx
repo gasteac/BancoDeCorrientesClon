@@ -7,53 +7,12 @@ import { Ionicons } from '../../components/shared/Ionicons';
 import { useState } from 'react';
 import { BoxButtons } from '../../components/shared/BoxButtons';
 import { useSelector } from 'react-redux';
-// import { Camera, useCameraDevices } from 'react-native-vision-camera';
-// import { CameraPermission } from 'react-native-vision-camera';
 
 export const HomeScreen = () => {
   const navigation = useNavigation();
   const [show, setShow] = useState(false);
-  const nombre = useSelector(state => state.login.nombre)
-
-  // useEffect(() => {
-  //   console.log('me muestro / no me muestro :)');
-  // }, [show]);
-
-  // useEffect(() => {
-  //   requestCameraPermission();
-  // }, []); 
-
-  // const requestCameraPermission = async () => {
-  //   const permission = await CameraPermission.request();
-  //   setCameraPermission(permission);
-  //   if (permission === 'denied') {
-  //     // Aquí puedes mostrar un mensaje al usuario indicando que no se puede usar la cámara
-  //     console.warn('Camera permission denied');
-  //   } else if (permission === 'authorized') {
-  //     // Aquí puedes iniciar la funcionalidad de la cámara
-  //     console.log('Camera permission authorized');
-  //   }
-  // }
-
-  // const { devices, isLoading } = useCameraDevices('wide-angle-camera');
-  // const device = devices?.back;
-
-  // const camarita = () =>{
-  //   if (isLoading) return <LoadingView />; 
-  //   if (device == null) return <Text>No suitable camera device found</Text>; 
-  //   if (cameraPermission !== 'authorized') {
-  //     return <Text>Camera permission not granted</Text>; // o puedes redireccionar a settings
-  //   }
-  //   return (
-  //     <Camera
-  //       style={StyleSheet.absoluteFill}
-  //       device={device}
-  //       isActive={true}
-  //       onError={(error) => console.error('Camera error:', error)}
-  //     />
-  //   );
-  // }
-
+  const {nombre} = useSelector(state => state.login)
+  
   return (
     <>
       <HamburguerMenu />
@@ -87,7 +46,7 @@ export const HomeScreen = () => {
           <BoxButtons label='Ingresar' icon='download-outline' />
           <BoxButtons label='Transferir' icon='share-outline' />
           <BoxButtons label='Prestamos' icon='cash-outline' />
-          <BoxButtons label='Tu CVU' icon='id-card-outline' />
+          <BoxButtons label='Tu CBU' icon='id-card-outline' />
         </View>
         {/* <Text style={[{ marginTop: 20 }, globalStyles.primaryText]}>Tarjetas</Text> */}
        

@@ -11,7 +11,7 @@ export const ProfileScreen = () => {
   return (
     <>
       <HamburguerMenu />
-      <View style={{marginTop:20}}>
+      <View style={{ marginTop: 20 }}>
         <Image
           resizeMode='cover'
           source={require('../../assets/images/profilePic.jpg')}
@@ -44,10 +44,10 @@ export const ProfileScreen = () => {
         //Asi me aseguro que el top no se me tape con el notch de iphone por ej
         marginTop: top + 10,
       }}>
-        
-        <View style={{ marginBottom: 2 , marginTop:10}}>
+
+        <View style={{ marginBottom: 2, marginTop: 10 }}>
           <Text style={{
-            fontSize: 14,
+            fontSize: 15,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
@@ -61,7 +61,7 @@ export const ProfileScreen = () => {
 
         <View style={{ marginBottom: 2 }}>
           <Text style={{
-            fontSize: 14,
+            fontSize: 15,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
@@ -75,7 +75,7 @@ export const ProfileScreen = () => {
 
         <View style={{ marginBottom: 2 }}>
           <Text style={{
-            fontSize: 14,
+            fontSize: 15,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
@@ -86,23 +86,23 @@ export const ProfileScreen = () => {
             fontFamily: 'Poppins-SemiBold'
           }}>Argentina</Text>
         </View>
-<View style={{flexDirection:'row', justifyContent:'space-between'}}>
-        <View style={{ marginBottom: 2 }}>
-          <Text style={{
-            fontSize: 14,
-            marginTop: 1,
-            color: 'gray',
-            fontFamily: 'Poppins-SemiBold'
-          }}>Provincia</Text>
-          <Text style={{
-            fontSize: 14,
-            color: 'black',
-            fontFamily: 'Poppins-SemiBold'
-          }}>Buenos Aires</Text>
-        </View>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <View style={{ marginBottom: 2 }}>
             <Text style={{
+              fontSize: 15,
+              marginTop: 1,
+              color: 'gray',
+              fontFamily: 'Poppins-SemiBold'
+            }}>Provincia</Text>
+            <Text style={{
               fontSize: 14,
+              color: 'black',
+              fontFamily: 'Poppins-SemiBold'
+            }}>Buenos Aires</Text>
+          </View>
+          <View style={{ marginBottom: 2 }}>
+            <Text style={{
+              fontSize: 15,
               marginTop: 1,
               color: 'gray',
               fontFamily: 'Poppins-SemiBold'
@@ -111,14 +111,14 @@ export const ProfileScreen = () => {
               fontSize: 14,
               color: 'black',
               fontFamily: 'Poppins-SemiBold',
-              alignSelf:'flex-end'
+              alignSelf: 'flex-end'
             }}>4300</Text>
           </View>
-      </View>
+        </View>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <View style={{ marginBottom: 2 }}>
             <Text style={{
-              fontSize: 14,
+              fontSize: 15,
               marginTop: 1,
               color: 'gray',
               fontFamily: 'Poppins-SemiBold'
@@ -131,7 +131,7 @@ export const ProfileScreen = () => {
           </View>
           <View style={{ marginBottom: 2 }}>
             <Text style={{
-              fontSize: 14,
+              fontSize: 15,
               marginTop: 1,
               color: 'gray',
               fontFamily: 'Poppins-SemiBold'
@@ -147,38 +147,44 @@ export const ProfileScreen = () => {
 
         <View style={{ marginBottom: 2 }}>
           <Text style={{
-            fontSize: 14,
+            fontSize: 15,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
           }}>Teléfono</Text>
-          <Text style={{
-            fontSize: 14,
-            color: 'black',
-            fontFamily: 'Poppins-SemiBold'
-          }}>+543795132130</Text>
+          <View style={{ flexDirection: 'row', gap: 10 }}>
+            <Text style={{
+              fontSize: 14,
+              color: 'black',
+              fontFamily: 'Poppins-SemiBold',
+              paddingTop: 3
+            }}>+543795132130</Text>
+            <Ionicons name='create-outline' size={22} />
+          </View>
         </View>
-
         <View style={{ marginBottom: 2 }}>
           <Text style={{
-            fontSize: 14,
+            fontSize: 15,
             marginTop: 1,
             color: 'gray',
             fontFamily: 'Poppins-SemiBold'
           }}>Correo electrónico</Text>
-          <Text style={{
-            fontSize: 14,
-            color: 'black',
-            fontFamily: 'Poppins-SemiBold'
-          }}>gastonacosta@banko.com.ar</Text>
+          <View style={{ flexDirection: 'row', gap: 10 }}>
+            <Text style={{
+              fontSize: 14,
+              color: 'black',
+              fontFamily: 'Poppins-SemiBold',
+              paddingTop: 3
+            }}>gastonacosta@banko.com.ar</Text>
+            <Ionicons name='create-outline' size={22} />
+          </View>
         </View>
-        
       </ScrollView>
     </>
   )
 }
 
-          
+
 
 
 
