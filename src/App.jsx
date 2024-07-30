@@ -3,8 +3,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {GlobalStack} from './presentation/routes/GlobalStack';
 import {Provider} from 'react-redux';
 import {store} from '../redux/store';
-import Toast, { BaseToast, ErrorToast } from 'react-native-toast-message';
-import { globalColors } from './presentation/theme/theme';
+import Toast, { BaseToast } from 'react-native-toast-message';
+
 export const App = () => {
   const toastConfig = {
     success: (props) => (
