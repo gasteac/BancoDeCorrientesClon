@@ -23,8 +23,8 @@ export const globalStyles = StyleSheet.create({
   },
   primaryButton: {
     backgroundColor: globalColors.primary,
-    borderRadius: 5,
-    paddingTop: 9,
+    borderRadius: 10,
+    paddingTop: 4,
     paddingBottom: 4,
     width: '100%',
     flexDirection:'row',
@@ -84,12 +84,13 @@ export const globalStyles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     margin:10,
-    height:100,
+    height:70,
     width:'100%',
-    borderRadius: 20,
+    borderRadius: 50,
     backgroundColor: globalColors.primary,
     color:'white',
-    
+    flexDirection:'row',
+    gap:10,
   },
   defaultButtonText:{
     color:'black',

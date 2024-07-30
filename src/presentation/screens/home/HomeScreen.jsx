@@ -51,24 +51,24 @@ export const HomeScreen = () => {
         <Pressable
           onPress={() => navigation.navigate('MODO')}
           // onPress={()=>onPress()}
-          style={{ backgroundColor: '#088c5e', marginTop: 10, height: 100, justifyContent: 'center', alignContent: 'center', alignItems: 'center', borderRadius:20 }}>
+          style={{ backgroundColor: '#088c5e', marginTop: 10, paddingHorizontal:10, position:'absolute', justifyContent: 'center', borderRadius:20, bottom:10, right:10 }}>
 
-            <Text style={[globalStyles.productsButtonText, {color:'white', alignSelf:'center', textAlign:'center', fontFamily:'Poppins-Bold', fontSize:40}]}>MODO</Text>
+            <Text style={[globalStyles.productsButtonText, {color:'white', alignSelf:'center', textAlign:'center', fontFamily:'Poppins-Bold', fontSize:30, letterSpacing:2}]}>MODO</Text>
         </Pressable>
         {/* <Text style={[{ marginTop: 20 }, globalStyles.primaryText]}>Tarjetas</Text> */}
        
         {/* <PrimaryButton onPress={() => navigation.navigate('Settings')} label="Settings" /> */}
         {/* <Pressable style={{position:'absolute', bottom:20, right:20}} onPress={()=> navigation.navigate('MODO')}> */}
-        <Pressable
+        {/* <Pressable
           style={{ position: 'absolute', bottom: 20, right: 20 }}
           onPress={() => navigation.navigate('MODO')}
         >
           <Image
             source={require('../../assets/images/Modo.png')}
             resizeMode="contain"
-            style={{ width: 60, height: 60, borderRadius: 100 }}
+            style={{ width: 60, height: 60, borderRadius: 100}}
           />
-        </Pressable>
+        </Pressable> */}
       </View>
     </>
   );

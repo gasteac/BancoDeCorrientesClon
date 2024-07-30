@@ -24,7 +24,6 @@ export const LoginScreen = () => {
         require('../../assets/images/carousel/3.jpg'),
         require('../../assets/images/carousel/4.jpg'),
         require('../../assets/images/carousel/5.jpg'),
-        require('../../assets/images/carousel/6.jpg'),
     ]
     return (
         <View style={{ paddingHorizontal: 20, alignItems: 'center', flex: 1 }}>

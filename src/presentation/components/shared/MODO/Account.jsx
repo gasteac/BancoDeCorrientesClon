@@ -1,16 +1,18 @@
 import { View, Switch, Image, StyleSheet, Text } from 'react-native'
 import { globalColors } from '../../../theme/theme'
 
-export const Account = ({ account, isFavorite, onFavoriteSelect }) => {
+export const Account = ({ account, isFavorite, onFavoriteSelect, showMode=false }) => {
     return (
         <View style={styles.accountContainer}>
-            <Switch
+            {!showMode && (
+                 <Switch
                 style={{ position: 'absolute', alignSelf: 'center', bottom: '40%', right: 10, zIndex: 40 }}
                 trackColor={{ false: '#767577', true: 'green' }}
                 thumbColor={isFavorite ? '#01d837' : '#f4f3f4'}
                 onValueChange={onFavoriteSelect}
                 value={isFavorite}
             />
+            )}
             <View style={[styles.cuentas, isFavorite && styles.favoriteAccount]}>
                 <Text style={styles.textoCuentas}>{account.type}</Text>
                 <Text style={styles.cbuTextoCuentas}>CBU: {account.cbu}</Text>

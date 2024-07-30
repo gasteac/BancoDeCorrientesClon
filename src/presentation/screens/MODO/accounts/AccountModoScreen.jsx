@@ -3,10 +3,18 @@ import { globalColors, globalStyles } from '../../../theme/theme'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Account } from '../../../components/shared/MODO/Account';
 import { useState } from 'react';
-
+import Toast from 'react-native-toast-message';
 export const AccountModoScreen = () => {
     const [favoriteAccount, setFavoriteAccount] = useState(null);
+    const [temporalFACC, setTemporalFACC] = useState(null);
     const [showModal, setShowModal] = useState(false);
+
+    const showToast = () => {
+        Toast.show({
+            type: 'success',
+            text1: 'Cuenta favorita agregada',
+            visibilityTime:2000,
+        })};
 
     const accounts = [
         { id: 1, type: 'Caja de ahorro', cbu: '49354748574854', balance: '$5.657,54' },
@@ -22,17 +30,18 @@ export const AccountModoScreen = () => {
     ];
 
     const handleFavoriteSelect = (account) => {
-        setFavoriteAccount(account);
+        setTemporalFACC(account);
         setShowModal(true);
     };
 
     const handleConfirmChange = () => {
+        setFavoriteAccount(temporalFACC);
         setShowModal(false);
+        showToast();
     };
 
     const handleCancelChange = () => {
         setShowModal(false);
-        setFavoriteAccount(null);
     };
 
     return (
@@ -50,7 +59,6 @@ export const AccountModoScreen = () => {
                         isFavorite={true}
                         onFavoriteSelect={() => setFavoriteAccount(null)}
                     />
-                    {/* <View style={{ height: 3, width: '80%', backgroundColor: globalColors.primary, borderRadius:100 }} /> */}
                     <Text style={{ fontSize: 17, color: 'black', marginBottom: 20, alignSelf: 'center', textAlign: 'center' }}>
                         Selecciona otra cuenta como favorita
                     </Text>
@@ -66,15 +74,16 @@ export const AccountModoScreen = () => {
                             key={account.id}
                             account={account}
                             isFavorite={favoriteAccount?.id === account.id}
-                            onFavoriteSelect={() => handleFavoriteSelect(account)}
+                            onFavoriteSelect={() => {  handleFavoriteSelect(account)}}
                         />
-                    ))}
+                    ))} 
             </ScrollView>
             <Modal visible={showModal} animationType="fade" transparent={true}>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                     <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, justifyContent: 'center', alignContent: 'center' }}>
-                        <Text style={{ fontSize: 15, color: 'black', marginBottom: 20, fontFamily: 'Poppins-Regular' }}>Seleccionar esta cuenta como favorita?</Text>
-                        <TouchableOpacity onPress={handleConfirmChange} style={{ justifyContent: 'center', backgroundColor: globalColors.primary, padding: 10, borderRadius: 10, marginBottom: 10 }}>
+                        <Text style={{ fontSize: 15, color: 'black', marginBottom: 10, fontFamily: 'Poppins-Regular' }}>Seleccionar esta cuenta como favorita?</Text>
+                        <Account account={temporalFACC} isFavorite={false} onFavoriteSelect={() => {}} showMode={true} />
+                        <TouchableOpacity onPress={handleConfirmChange} style={{ justifyContent: 'center', backgroundColor: globalColors.primary, padding: 10, borderRadius: 10, marginVertical: 10 }}>
                             <Text style={{ color: 'white', textAlign: 'center', fontFamily: 'Poppins-Regular', color: 'black' }}>Confirmar</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={handleCancelChange} style={{ justifyContent: 'center', backgroundColor: globalColors.primaryDarker, padding: 10, borderRadius: 10 }}>
