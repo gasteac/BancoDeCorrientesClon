@@ -86,15 +86,19 @@ export const LoginScreen = () => {
                 />
             </View>
             <View style={{ flex: 1, width: '100%', alignContent: 'center', alignItems: 'center', alignContent: 'center', marginTop: 20, marginBottom: 10 }}>
+
                 <PrimaryButton onPress={() => (
                     dispatch(loginSuccess({username:username})),
                     navigation.replace('SideMenu')
                 )} label='Iniciar Sesión' />
-                <Pressable style={{ justifyContent: 'center', width: '100%', gap: 5, alignItems: 'center', alignContent: 'center', marginVertical: 30 }} onPress={() => setModalVisible(true)}>
-                    <Ionicons name='finger-print' size={45} color={globalColors.principalColor} />
-                    <Text style={{ color: globalColors.principalColor, fontSize: 15, fontFamily: 'Poppins-Medium' }}>Usar Huella</Text>
+                <Text style={{ color: globalColors.principalColor, fontSize: 14, fontFamily: 'Poppins-Regular', marginTop: 10 }}>Registrarse / Desbloquear</Text>
+                
+                <Pressable style={{ justifyContent: 'center', width: '100%', gap: 5, alignItems: 'center', alignContent: 'center', marginVertical: 20 }} onPress={() => setModalVisible(true)}>
+                    <Ionicons name='finger-print' size={35} color={globalColors.principalColor} />
+                    <Text style={{ color: globalColors.principalColor, fontSize: 14, fontFamily: 'Poppins-Regular' }}>Usar Huella</Text>
                 </Pressable>
-                <Text style={{ color: globalColors.principalColor, fontSize: 14, fontFamily: 'Poppins-Regular' }}>Registrarse / Desbloquear</Text>
+
+
             </View>
             <View style={{ flex: 1, flexDirection: 'row', position: 'absolute', bottom: 0, width: '120%', padding: 5, justifyContent: 'space-evenly', backgroundColor: '#ebebeb' }}>
                 <View style={{ alignItems: 'center' }}>

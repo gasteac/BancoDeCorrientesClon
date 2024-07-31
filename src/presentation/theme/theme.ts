@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 export const globalColors = {
   primary: '#fcd04e',
+  primaryLighter: '#fdf2d1',
   primaryDarker: '#dab442',
   principalColor: '#123262',
   principalColorDarker: '#0a162b',
@@ -33,29 +34,26 @@ export const globalStyles = StyleSheet.create({
     alignContent:'center'
   },
   primaryButtonText:{
-    fontSize:18,
+    fontSize:17,
     color:'#000000',
-    fontFamily: 'Poppins-Medium',
+    fontFamily: 'Poppins-Regular',
     paddingTop:5,
     alignSelf:'flex-end',
     textAlign:'center',
   },
   productsButton: {
-    backgroundColor: 'white',
-    shadowColor: 'black',
-    elevation: 5,
+    backgroundColor: '#eeeeee',
+
+ 
     borderRadius: 10,
-    padding: 12,
+    padding: 5,
     gap: 10,
     marginBottom: 10,
-    width: '100%',
     flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   productsButtonText: {
     fontSize: 15,
-    fontWeight: '500',
     color: 'black',
     fontFamily: 'Poppins-Medium',
     paddingTop: 5,
@@ -64,7 +62,7 @@ export const globalStyles = StyleSheet.create({
     fontSize:15,
     color:'black',
     fontFamily: 'Poppins-Regular',
-    paddingTop: 5,
+ 
   },
   buttonText: {
     color: globalColors.principalColor,
