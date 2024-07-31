@@ -43,8 +43,6 @@ export const globalStyles = StyleSheet.create({
   },
   productsButton: {
     backgroundColor: '#eeeeee',
-
- 
     borderRadius: 10,
     padding: 5,
     gap: 10,
@@ -85,7 +83,7 @@ export const globalStyles = StyleSheet.create({
     height:70,
     width:'100%',
     borderRadius: 50,
-    backgroundColor: globalColors.primary,
+    backgroundColor: '#eeeeee',
     color:'white',
     flexDirection:'row',
     gap:10,

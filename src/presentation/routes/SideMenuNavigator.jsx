@@ -8,12 +8,11 @@ import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-
 
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '../components/shared/Ionicons';
-import { ModoNavigator } from './MODO/ModoNavigator';
+import { ModoNavigator } from './modo/ModoNavigator';
 import { LoginScreen } from '../screens/login/LoginScreen';
 import { ProfileNavigator } from './ProfileNavigator';
-import { ProductsStack } from './PRODUCTS/ProductsStack';
+import { HomeStack } from './home/HomeStack';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 // DrawerNavigator es un contenedor de pantallas que se muestra como un menú lateral
 // El Drawer puede contener a otros Stacks, como StackNavigator, o pantallas individuales
@@ -62,13 +61,13 @@ export const SideMenuNavigator = () => {
         },
       }}>
 
-        
+
       <Drawer.Screen
         name="Mis Productos"
         options={{
           drawerIcon: ({ color }) => <Ionicons name="home" color={color} />,
         }}
-        component={ProductsStack}
+        component={HomeStack}
       />
       <Drawer.Screen
         name="Perfil"
@@ -102,13 +101,13 @@ export const SideMenuNavigator = () => {
         component={LoginScreen}
         // TODO AYUDAAAA NO SE OLVIDA DE LA PANTALLA ANTERIOR. NO SE COMO HACER QUE SE OLVIDE AAAAAAH
         onPress={() => {
-            navigation.dispatch(
-              CommonActions.reset({
-                index: 0,
-                routes: [{ name: 'LoginScreen' }],
-              })
-            );
-            navigation.reset('LoginScreen');
+          navigation.dispatch(
+            CommonActions.reset({
+              index: 0,
+              routes: [{ name: 'LoginScreen' }],
+            })
+          );
+          navigation.reset('LoginScreen');
         }
         }
       />
@@ -136,7 +135,7 @@ const CustomDrawerContent = props => {
               color: 'white',
               alignSelf: 'center',
               marginBottom: 10,
-         
+
               fontFamily: 'Poppins-Medium',
               paddingTop: 5
             },
@@ -147,11 +146,11 @@ const CustomDrawerContent = props => {
           style={{
             flexDirection: 'row',
             justifyContent: 'flex-start',
-            gap:10,
+            gap: 10,
             marginBottom: 5,
             alignItems: 'center',
             alignContent: 'center',
-            paddingHorizontal:10
+            paddingHorizontal: 10
 
 
           }}>
@@ -181,7 +180,7 @@ const CustomDrawerContent = props => {
                 fontFamily: 'Poppins-Medium',
               },
             ]}>
-           {nombre}
+            {nombre}
           </Text>
           {/* <Image source={require('../assets/icons/seguro.png')} resizeMode='contain' style={{ height: 25, width: 25, position: 'absolute', bottom:0, left:225 }}></Image> */}
           <View
@@ -192,7 +191,7 @@ const CustomDrawerContent = props => {
               right: 0,
             }}>
             <Text style={{
-              color: '#17f060', fontFamily: 'Poppins-Medium', paddingTop: 5, fontSize:10, marginTop:-5
+              color: '#17f060', fontFamily: 'Poppins-Medium', paddingTop: 5, fontSize: 10, marginTop: -5
             }}>Dispositivo Vinculado</Text>
             <Ionicons name="phone-portrait-outline" color="#17f060" size={15} />
           </View>
@@ -201,13 +200,13 @@ const CustomDrawerContent = props => {
       {/* Parte del drawer de abajo de la foto, scrolleable */}
       {/* DrawerContentScrollView es un componente que recibe props y retorna un componente que se muestra en el drawer y se puede scrollear */}
       <DrawerContentScrollView>
-      
+
         {/* Por ejemplo aca quiero que se muestre una imagen, y despues los items del drawer  */}
         {/* y aca muestro los items del drawer que ya estaban definidos en el drawer, y ahora vinieron como props, por ejemplo "Home" o "Profile"  */}
         <DrawerItemList {...props} />
         {/* Aca podría agregar otra cosa al final por ejemplo   */}
       </DrawerContentScrollView>
-      
+
       {/* <Button
         title="SECRET SCREEN"
         style={{ backgroundColor: 'red' }}

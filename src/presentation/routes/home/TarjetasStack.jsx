@@ -1,9 +1,10 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { CreditCardsScreen } from '../../screens/products/cards/CreditCardsScreen';
-import { DebitCardsScreen } from '../../screens/products/cards/DebitCardsScreen';
+import { CreditCardsScreen } from '../../screens/products/CreditCardsScreen';
+import { DebitCardsScreen } from '../../screens/products/DebitCardsScreen';
+
 
 const Tab = createMaterialTopTabNavigator();
-export const CardsTabsNavigator = () => {
+export const TarjetasStack = () => {
     return (
         <Tab.Navigator
             screenOptions={{

@@ -1,5 +1,5 @@
 import { Image, StyleSheet, View } from 'react-native'
-import { globalStyles } from '../../../theme/theme'
+import { globalStyles } from '../../theme/theme'
 import { ScrollView } from 'react-native-gesture-handler'
 
 export const CreditCardsScreen = () => {
@@ -7,32 +7,32 @@ export const CreditCardsScreen = () => {
         <View style={[globalStyles.container,{paddingBottom:0}]}>
             <ScrollView>
                 <Image
-                    resizeMode='contain'
-                    source={require('../../../assets/images/creditCard.png')}
+                    
+                    source={require('../../assets/images/creditCard.png')}
                     style={styles.imageStyle}
                 >
                 </Image>
                 <Image
-                    resizeMode='contain'
-                    source={require('../../../assets/images/creditCard.png')}
+                 
+                    source={require('../../assets/images/creditCard.png')}
                     style={styles.imageStyle}
                 >
                 </Image>
                 <Image
-                    resizeMode='contain'
-                    source={require('../../../assets/images/creditCard.png')}
+                    
+                    source={require('../../assets/images/creditCard.png')}
                     style={styles.imageStyle}
                 >
                 </Image>
                 <Image
-                    resizeMode='contain'
-                    source={require('../../../assets/images/creditCard.png')}
+                  
+                    source={require('../../assets/images/creditCard.png')}
                     style={styles.imageStyle}
                 >
                 </Image>
                 <Image
-                    resizeMode='contain'
-                    source={require('../../../assets/images/creditCard.png')}
+            
+                    source={require('../../assets/images/creditCard.png')}
                     style={styles.imageStyle}
                 >
                 </Image>
@@ -44,8 +44,8 @@ export const CreditCardsScreen = () => {
 const styles = StyleSheet.create({
     imageStyle: {
         width: 300,
-        height: 200,
-        borderRadius: 10,
-        margin: 10
+        height: 190,
+        margin: 10,
+        borderRadius:20,
     }
 });
