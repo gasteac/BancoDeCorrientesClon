@@ -1,9 +1,15 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { PesosAccountScreen } from '../../screens/products/PesosAccountScreen';
 import { DollarsAccountScreen } from '../../screens/products/DollarsAccountScreen';
+import { useEffect } from 'react';
 
 const Tab = createMaterialTopTabNavigator();
-export const CajasDeAhorroStack = () => {
+export const CajasDeAhorroStack = ({ navigation }) => {
+    useEffect(() => {
+        navigation.setOptions({
+            headerShown: false
+        })
+    }, [])
     return (
         <Tab.Navigator
             screenOptions={{

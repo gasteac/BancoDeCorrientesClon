@@ -8,8 +8,7 @@ import { useState } from 'react';
 import { BoxButtons } from '../../components/shared/BoxButtons';
 import { useSelector } from 'react-redux';
 
-export const HomeScreen = () => {
-  const navigation = useNavigation();
+export const HomeScreen = ({ navigation }) => {
   const [show, setShow] = useState(true);
   const { nombre } = useSelector(state => state.login)
 
@@ -50,7 +49,7 @@ export const HomeScreen = () => {
             <BoxButtons label='Plazos Fijos' icon='calendar-outline' />
           </Pressable>
         </View>
-        <ScrollView>
+        <ScrollView showsHorizontalScrollIndicator={false}>
           <Text style={[globalStyles.primaryText, { fontSize: 18, letterSpacing: 2, fontFamily: 'Poppins-SemiBold' }]}>CUENTAS</Text>
           <ProductsButton
             onPress={() => navigation.navigate('cajasDeAhorroStack')}

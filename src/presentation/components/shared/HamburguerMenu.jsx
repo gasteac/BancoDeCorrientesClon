@@ -22,7 +22,7 @@ export const HamburguerMenu = () => {
         </Pressable>
       ),
       headerRight: () => (
-        <TouchableOpacity onPress={() => navigation.navigate('Portal Principal')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Mis Productos')}>
           <Image
             source={require('../../assets/images/BCO2.png')}
             style={{

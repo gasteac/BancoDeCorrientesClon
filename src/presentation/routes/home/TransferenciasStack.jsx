@@ -1,19 +1,15 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import { useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { globalColors } from '../../theme/theme';
 import { TransfersScreen } from '../../screens/products/TransfersScreen';
+import { useEffect } from 'react';
 
 const Stack = createStackNavigator();
-export const TransferenciasStack = () => {
-    const navigation = useNavigation();
-
+export const TransferenciasStack = ({ navigation }) => {
     useEffect(() => {
         navigation.setOptions({
             headerShown: false
         })
     }, [])
-
     return (
         <Stack.Navigator
             initialRouteName='Transferir dinero'

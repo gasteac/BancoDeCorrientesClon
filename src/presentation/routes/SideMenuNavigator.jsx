@@ -5,35 +5,32 @@ import {
 } from '@react-navigation/drawer';
 import { globalColors, globalStyles } from '../theme/theme';
 import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
-
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '../components/shared/Ionicons';
-import { ModoNavigator } from './modo/ModoNavigator';
 import { LoginScreen } from '../screens/login/LoginScreen';
-import { ProfileNavigator } from './ProfileNavigator';
-import { HomeStack } from './home/HomeStack';
 import { useSelector } from 'react-redux';
+import { TabNavigatorMenu } from './TabNavigatorMenu';
+import CustomDrawerContent from './CustomDrawerContent';
 
 // DrawerNavigator es un contenedor de pantallas que se muestra como un menú lateral
 // El Drawer puede contener a otros Stacks, como StackNavigator, o pantallas individuales
 
 const Drawer = createDrawerNavigator();
+export const SideMenuNavigator = ({ navigation, route }) => {
 
-export const SideMenuNavigator = () => {
-  const navigation = useNavigation();
+
   const dimensions = useWindowDimensions();
   return (
     // Drawer.Navigator es el contenedor de las pantallas, y drawerContent es el contenido del menú lateral
     // drawerContent es una función que recibe props y retorna un componente (no es obligatorio, pero si quiero modificar el contenido la barra lateral si)
     <Drawer.Navigator
-      initialRouteName="Pantalla Principal"
+
+      initialRouteName="Mis Productos Drawer"
       // Las props que le paso a drawerContent son las props del propio Drawer.Navigator, es como que le paso toda su info al nuevo componente que voy a crear (y mostrar)
       // dsp en el componente que cree, puedo acceder a las props que le paso acá, en este caso, CustomDrawerContent
       drawerContent={props => <CustomDrawerContent {...props} />}
       // screenOptions es para personalizar el drawer
       screenOptions={{
-        //Que tan grande es la seccion desde donde puedo mover con el dedo el drawer para verlo
-        swipeEdgeWidth: 80,
         //que no me muestre el header (titulo con el icono hamburguesa)
         //dsp me arreglo para mostrarlo al lado de los títulos de otra forma
         headerShown: false,
@@ -59,25 +56,34 @@ export const SideMenuNavigator = () => {
         drawerItemStyle: {
           borderRadius: 10,
         },
+
       }}>
 
 
       <Drawer.Screen
-        name="Mis Productos"
+        name="Mis Productos Drawer"
         options={{
           drawerIcon: ({ color }) => <Ionicons name="home" color={color} />,
         }}
-        component={HomeStack}
+        component={TabNavigatorMenu}
+        // initialParams={{ screen: 'Mis Productos' }}
+       
       />
+
+     
+
       <Drawer.Screen
-        name="Perfil"
+        name="Perfil Drawer"
         options={{
           drawerIcon: ({ color }) => <Ionicons name="person" color={color} />,
         }}
-        component={ProfileNavigator}
+        component={TabNavigatorMenu}
+        // initialParams={{ screen: 'Perfil' }}
+      
       />
+     
       <Drawer.Screen
-        name="MODO"
+        name="MODO Drawer"
         options={{
           drawerIcon: () => (
             <Image
@@ -91,8 +97,10 @@ export const SideMenuNavigator = () => {
             />
           ),
         }}
-        component={ModoNavigator}
+        component={TabNavigatorMenu}
+      // initialParams={{ screen: 'Modo' }}
       />
+
       <Drawer.Screen
         name="Cerrar Sesión"
         options={{
@@ -115,7 +123,7 @@ export const SideMenuNavigator = () => {
   );
 };
 // CustomDrawerContent es un componente que recibe props y retorna un componente que se muestra en el drawer
-const CustomDrawerContent = props => {
+const CustomDrawerContent2 = props => {
   const navigation = useNavigation();
   const nombre = useSelector(state => state.login.nombre);
 

@@ -37,7 +37,7 @@ export const AccountModoScreen = () => {
     const handleConfirmChange = () => {
         setFavoriteAccount(temporalFACC);
         setShowModal(false);
-        showToast();
+        // showToast();
     };
 
     const handleCancelChange = () => {

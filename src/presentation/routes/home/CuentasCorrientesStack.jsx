@@ -1,8 +1,14 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { CuentasCorrientesScreen } from '../../screens/products/CuentasCorrientesScreen';
+import { useEffect } from 'react';
 
 const Tab = createMaterialTopTabNavigator();
-export const CuentasCorrientesStack = () => {
+export const CuentasCorrientesStack = ({ navigation }) => {
+    useEffect(() => {
+        navigation.setOptions({
+            headerShown: false
+        })
+    }, [])
     return (
         <Tab.Navigator
             screenOptions={{

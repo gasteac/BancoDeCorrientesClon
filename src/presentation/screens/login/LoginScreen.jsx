@@ -28,29 +28,9 @@ export const LoginScreen = () => {
     return (
         <View style={{ paddingHorizontal: 20, alignItems: 'center', flex: 1 }}>
             <View style={{ flex: 1 }}>
-                <Carousel
-                    mode="parallax"
-                    // mode='scale-fade-in-out'
-                    // parallaxScrollingScale={0}
-                    // parallaxScrollingOffset={0}
-                    scrollAnimationDuration={1500}
-                    loop
-                    width={width}
-                    height={width / 2}
-                    autoPlay={true}
-                    data={imagesCarousel}
-                    renderItem={({ index }) => (
-                        <View >
-                            <Image
-                                resizeMode='cover'
-                                style={{ borderRadius: 12, height: width / 2, width: width, shadowColor: 'black', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.8, shadowRadius: 2 }}
-                                source={imagesCarousel[index]}
-                            />
-                        </View>
-                    )}
-                />
+               
                 {/* <Image style={{ height: 50, width: 50, position: 'absolute', right: 45, top: 25 }} resizeMode='contain' source={require('../../assets/images/BCO2.png')} /> */}
-                <Image style={{ height: 150, position: 'absolute', alignSelf: 'center', bottom: -20 }} resizeMode='contain' source={require('../../assets/images/logoLogin.png')} />
+                <Image style={{ height: 150, alignSelf: 'center', marginTop:60}} resizeMode='contain' source={require('../../assets/images/logoLogin.png')} />
             </View>
             {/* <Text style={{ color: globalColors.principalColor, fontSize: 14 }}>v1726</Text> */}
             <View style={{ width: '100%', marginTop: 20 }}>

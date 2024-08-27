@@ -1,19 +1,15 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import { useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { globalColors } from '../../theme/theme';
 import { IngresoDineroScreen } from '../../screens/products/IngresoDineroScreen';
+import { useEffect } from 'react';
 
 const Stack = createStackNavigator();
-export const IngresoDineroStack = () => {
-    const navigation = useNavigation();
-
-    useEffect(() => {
-        navigation.setOptions({
-            headerShown: false
-        })
-    }, [])
-
+export const IngresoDineroStack = ({ navigation }) => {
+     useEffect(() => {
+    navigation.setOptions({
+      headerShown: false
+    })
+  }, [])
     return (
         <Stack.Navigator
             initialRouteName='Ingreso de dinero'

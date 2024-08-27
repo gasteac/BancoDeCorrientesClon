@@ -1,20 +1,15 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import { useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { globalColors } from '../../theme/theme';
-import { IngresoDineroScreen } from '../../screens/products/IngresoDineroScreen';
 import { PlazosFijosScreen } from '../../screens/products/PlazosFijosScreen';
+import { useEffect } from 'react';
 
 const Stack = createStackNavigator();
-export const PlazosFijosStack = () => {
-    const navigation = useNavigation();
-
+export const PlazosFijosStack = ({navigation}) => {
     useEffect(() => {
         navigation.setOptions({
             headerShown: false
         })
     }, [])
-
     return (
         <Stack.Navigator
             initialRouteName='Plazos Fijos'

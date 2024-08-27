@@ -1,14 +1,13 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { globalColors } from '../theme/theme';
-import { useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { ModoScreen } from '../screens/MODO/ModoScreen';
+import { useCallback, useEffect } from 'react';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
+import { useFocusEffect } from '@react-navigation/native';
+
 // Creamos un stack, que es una pila de pantallas
 const Stack = createStackNavigator();
 // Es como el Router de React, y los Stack.Screen son como las rutas
-export const ProfileNavigator = () => {
-  const navigation = useNavigation();
+export const ProfileNavigator = ({ navigation }) => {
   useEffect(() => {
     navigation.setOptions({
       headerShown: false
